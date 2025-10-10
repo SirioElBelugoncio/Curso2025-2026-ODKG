@@ -1,0 +1,337 @@
+[
+  {
+    "op": "core/column-removal",
+    "columnName": "Nombre de personal docent investigador a 31 de desembre",
+    "description": "Remove column Nombre de personal docent investigador a 31 de desembre"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "Nombre de personal docent investigador en equivalent a temps complet a 31 de desembre",
+    "description": "Remove column Nombre de personal docent investigador en equivalent a temps complet a 31 de desembre"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "Nombre de personal docent investigador permanent a 31 de desembre",
+    "description": "Remove column Nombre de personal docent investigador permanent a 31 de desembre"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Tipus d'universitat",
+          "expression": "value",
+          "columnName": "Tipus d'universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "PÚBLICA",
+                "l": "PÚBLICA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Universitat",
+          "expression": "value",
+          "columnName": "Universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "UB",
+                "l": "UB"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Any",
+          "expression": "value",
+          "columnName": "Any",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2023",
+                "l": "2023"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "baseColumnName": "Tipus de centre",
+    "expression": "grel:value + \" - \" + cells[\"Nacionalitat\"].value + \" - \" + cells[\"Sexe\"].value",
+    "onError": "set-to-blank",
+    "newColumnName": "Category",
+    "columnInsertIndex": 4,
+    "description": "Create column Category at index 4 based on column Tipus de centre using expression grel:value + \" - \" + cells[\"Nacionalitat\"].value + \" - \" + cells[\"Sexe\"].value"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "Category",
+    "description": "Remove column Category"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Tipus d'universitat",
+          "expression": "value",
+          "columnName": "Tipus d'universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "PRIVADA",
+                "l": "PRIVADA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Tipus d'universitat",
+          "expression": "value",
+          "columnName": "Tipus d'universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "NO PRESENCIAL",
+                "l": "NO PRESENCIAL"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Tipus d'universitat",
+          "expression": "value",
+          "columnName": "Tipus d'universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "PÚBLICA",
+                "l": "PÚBLICA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Any",
+          "expression": "value",
+          "columnName": "Any",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2019",
+                "l": "2019"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Tipus d'universitat",
+          "expression": "value",
+          "columnName": "Tipus d'universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "PÚBLICA",
+                "l": "PÚBLICA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Any",
+          "expression": "value",
+          "columnName": "Any",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2020",
+                "l": "2020"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Tipus d'universitat",
+          "expression": "value",
+          "columnName": "Tipus d'universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "PÚBLICA",
+                "l": "PÚBLICA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Any",
+          "expression": "value",
+          "columnName": "Any",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2021",
+                "l": "2021"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Tipus d'universitat",
+          "expression": "value",
+          "columnName": "Tipus d'universitat",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "PÚBLICA",
+                "l": "PÚBLICA"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Any",
+          "expression": "value",
+          "columnName": "Any",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2022",
+                "l": "2022"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  }
+]
